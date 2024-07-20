@@ -9,6 +9,10 @@ header {
     color: #fff;
     padding: 1rem 0;
     text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
 }
 
 nav .logo {
@@ -19,10 +23,11 @@ nav .logo {
 nav ul {
     list-style: none;
     padding: 0;
+    display: flex;
+    justify-content: center;
 }
 
 nav ul li {
-    display: inline;
     margin: 0 1rem;
 }
 
@@ -39,27 +44,63 @@ nav ul li a {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+    padding-top: 60px; /* adjust if header height changes */
+}
+
+#hero button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 1rem;
 }
 
 section {
-    padding: 2rem;
+    padding: 4rem 2rem;
     text-align: center;
 }
 
 section h2 {
     margin-top: 0;
+    font-size: 2.5rem;
+}
+
+.services-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.service {
+    background-color: #f9f9f9;
+    padding: 1rem;
+    border-radius: 8px;
+    width: 250px;
+    text-align: center;
+}
+
+.service img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
 }
 
 .gallery {
     display: flex;
     justify-content: center;
     gap: 1rem;
+    flex-wrap: wrap;
 }
 
 .gallery img {
     width: 300px;
     height: 200px;
     object-fit: cover;
+    border-radius: 8px;
 }
 
 .testimonial {
@@ -68,6 +109,17 @@ section h2 {
     margin: 1rem auto;
     padding: 1rem;
     width: 80%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-radius: 8px;
+}
+
+.testimonial img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 footer {
@@ -75,6 +127,9 @@ footer {
     color: #fff;
     text-align: center;
     padding: 1rem 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
 }
 
 form {

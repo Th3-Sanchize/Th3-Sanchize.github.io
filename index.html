@@ -23,6 +23,7 @@
     <section id="hero">
         <h1>Welcome to Chroma Culture Tint</h1>
         <p>Your Premier Automotive Window Tinting Solution</p>
+        <button onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'});">Get a Quote</button>
     </section>
 
     <section id="about">
@@ -32,20 +33,23 @@
 
     <section id="services">
         <h2>Our Services</h2>
-        <ul>
-            <li>
+        <div class="services-container">
+            <div class="service">
+                <img src="automotive-icon.png" alt="Automotive Window Tinting">
                 <h3>Automotive Window Tinting</h3>
                 <p>Improve the comfort and style of your vehicle with our professional window tinting services.</p>
-            </li>
-            <li>
+            </div>
+            <div class="service">
+                <img src="residential-icon.png" alt="Residential Window Tinting">
                 <h3>Residential Window Tinting</h3>
                 <p>Enhance privacy and reduce energy costs in your home with our high-quality residential window tinting.</p>
-            </li>
-            <li>
+            </div>
+            <div class="service">
+                <img src="commercial-icon.png" alt="Commercial Window Tinting">
                 <h3>Commercial Window Tinting</h3>
                 <p>Protect your business and create a more comfortable environment with our commercial window tinting solutions.</p>
-            </li>
-        </ul>
+            </div>
+        </div>
     </section>
 
     <section id="gallery">
@@ -60,9 +64,11 @@
     <section id="testimonials">
         <h2>What Our Customers Say</h2>
         <div class="testimonial">
+            <img src="customer1.jpg" alt="John Doe">
             <p>"Chroma Culture Tint did an amazing job on my car! The service was fast and professional. Highly recommend!" - John Doe</p>
         </div>
         <div class="testimonial">
+            <img src="customer2.jpg" alt="Jane Smith">
             <p>"Great experience with Chroma Culture Tint. The quality of the tint is top-notch, and it has made a big difference in reducing glare." - Jane Smith</p>
         </div>
     </section>
@@ -85,7 +91,7 @@
 
     <footer>
         <p>&copy; 2024 Chroma Culture Tint. All rights reserved.</p>
-        <p>Contact us at (123) 456-7890 or info@chromaculturetint.com</p>
+        <p>Contact us at (512) 508-8244 or info@chromaculturetint.com</p>
     </footer>
 
     <script src="scripts.js"></script>
