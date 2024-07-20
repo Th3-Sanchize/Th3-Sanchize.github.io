@@ -144,7 +144,7 @@ form {
     align-items: center;
 }
 
-form label, form input, form textarea, form button {
+form label, form input, form textarea, form select, form button {
     width: 80%;
     margin: 0.5rem 0;
     padding: 0.5rem;
