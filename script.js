@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Determine the vehicle type
         for (const type in vehicleTypes) {
-            if (vehicleTypes[type].includes(`${selectedMake} ${selectedModel}`)) {
+            if (vehicleTypes[type].includes(selectedModel)) {
                 vehicleType = type;
                 break;
             }
@@ -94,11 +94,11 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         const addOnPrices = {
-            sunroof: 49.99,
+            sunroof: 50,
             windshield: 199.99,
             eyebrow: 59.99,
-            tintRemoval: 24.99,
-            tintRemovalRear: 49.99,
+            tintRemoval: 50,
+            tintRemovalRear: 100
         };
 
         let totalPrice = packagePrices[packageType][tintPackage];
