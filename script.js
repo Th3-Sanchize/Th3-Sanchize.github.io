@@ -80,6 +80,27 @@ document.addEventListener('DOMContentLoaded', () => {
         const tintPackage = document.getElementById('tint-package').value;
         const addOns = Array.from(document.querySelectorAll('input[name="add-ons"]:checked')).map(input => input.value);
         
+        const packagePrices = {
+            'front-windows': { bronze: 124.99, silver: 174.99, gold: 224.99 },
+            coupe: {
+                'all-windows': { bronze: 174.99, silver: 249.99, gold: 349.99 }
+            },
+            'sedan-suv': {
+                'all-windows': { bronze: 224.99, silver: 299.99, gold: 399.99 }
+            },
+            'mid-large-suv': {
+                'all-windows': { bronze: 274.99, silver: 349.99, gold: 449.99 }
+            }
+        };
+
+        const addOnPrices = {
+            sunroof: 49.99,
+            windshield: 199.99,
+            eyebrow: 59.99,
+            tintRemoval: 24.99,
+            tintRemovalRear: 49.99,
+        };
+
         let totalPrice = packagePrices[packageType][tintPackage];
         if (packageType === 'all-windows') {
             totalPrice = packagePrices[vehicleType][packageType][tintPackage];
