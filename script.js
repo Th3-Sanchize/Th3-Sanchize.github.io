@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Function to load JSON data
     async function loadVehicleData() {
         try {
-            const response = await fetch('vehicleData.json');
+            const response = await fetch('data/vehicleData.json');
             vehicleData = await response.json();
             populateMakes(vehicleData);
         } catch (error) {
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function loadVehicleTypes() {
         try {
-            const response = await fetch('vehicleTypes.json');
+            const response = await fetch('data/vehicleTypes.json');
             vehicleTypes = await response.json();
         } catch (error) {
             console.error('Error loading vehicle types:', error);
