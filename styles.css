@@ -15,8 +15,9 @@ img {
     display: flexbox;
     border-radius: 15%;
     margin: 1 0;
-    max-width: 100%
+    max-width: 100%;
 }
+
 header {
     background: linear-gradient(90deg, #ff5f6d, #ffc371); /* Gradient background matching the logo colors */
     color: white;
@@ -53,11 +54,16 @@ nav ul li {
 nav ul li a {
     color: white;
     text-decoration: none;
-    transition: color 0.3s ease; /* Transition for hover effect */
+    transition: color 0.3s ease, transform 0.3s ease; /* Add transition */
 }
 
 nav ul li a:hover {
     color: #ffcc00; /* Change color on hover */
+    transform: scale(1.1); /* Slightly enlarge the text on hover */
+}
+
+nav ul li a.active {
+    border-bottom: 2px solid #ffcc00; /* Add an underline to active link */
 }
 
 section {
@@ -106,11 +112,13 @@ button {
     padding: 0.75rem;
     margin-top: 1rem;
     border-radius: 0.5rem; /* 8px converted to rem */
-    transition: background-color 0.3s ease; /* Transition for hover effect */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Add transition */
+    animation: bounce 2s infinite; /* Add a bounce animation to buttons */
 }
 
 button:hover {
-    background-color: #ffcc00;
+    background-color: #ffcc00; /* Change button color on hover */
+    transform: scale(1.05); /* Slightly enlarge the button on hover */
 }
 
 footer {
@@ -131,12 +139,14 @@ footer {
     background-color: #2c2c2c; /* Dark background */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
-    animation: fadeIn 1s ease-in-out; /* Keyframe animation */
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1); /* Add box shadow */
+    animation: fadeIn 1s ease-in-out; /* Fade in effect */
 }
 
 .service-tier:hover {
     transform: scale(1.05);
     box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);  /* 4px 8px converted to rem */
+    background-color: #333333; /* Change background color on hover */
 }
 
 .service-tier:nth-child(odd) {
@@ -197,7 +207,7 @@ address {
     margin-top: 1rem;
 }
 
-@media (max-width: 37.5rem) {  /* 600px converted to rem */
+@media (max-width: 600px) {  /* 600px converted to rem */
     html {
         font-size: 14px; /* Adjust the base font size for smaller screens */
     }
@@ -211,6 +221,10 @@ address {
         text-align: left;
         padding: 0.5rem;
     }
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }
 
 @keyframes fadeIn {
@@ -222,4 +236,55 @@ address {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-15px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Blog List Section */
+#blog-list {
+    padding: 2rem;
+    text-align: center;
+    background-color: #1e1e1e; /* Dark background */
+    border-radius: 0.5rem;
+    margin: 1rem auto;
+    max-width: 90%;
+}
+
+.blog-card {
+    background-color: #2c2c2c; /* Dark card background */
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 0.5rem; /* 8px converted to rem */
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2); /* 4px 8px converted to rem */
+}
+
+.blog-card h3 {
+    color: #ffcc00; /* Highlighted header color */
+    margin-bottom: 0.5rem;
+}
+
+.blog-card h4 {
+    color: #ffffff; /* Light text color */
+    margin-top: 0.5rem;
+}
+
+.blog-card p {
+    color: #ffffff; /* Light text color */
+    font-style: italic;
 }
