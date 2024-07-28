@@ -8,25 +8,17 @@
     <meta name="keywords" content="window tinting Killeen, automotive window film Killeen, car tint Killeen, Chroma Culture Tint, mobile tint services, drop-off tint shop">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
-    <script type="text/javascript">
-       (function(){
-          emailjs.init("michael.sanchez05@gmail.com");
-       })();
-    </script>
-    <script type="text/javascript">
-       document.addEventListener('DOMContentLoaded', function() {
-          document.getElementById('contact-form').addEventListener('submit', function(event) {
-             event.preventDefault();
-             emailjs.sendForm('service_hdokaxn', 'template_s681ich', this)
-                 .then(function() {
-                     alert('SUCCESS!');
-                 }, function(error) {
-                     alert('FAILED...', error);
-                 });
-          });
-       });
-    </script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "UQ59cvsnmqrEfdsFZ",
+      });
+   })();
+</script>
+<script src="script.js"></script>
 </head>
 <body>
     <header>
@@ -156,10 +148,13 @@
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required>
 
+            <label for="phone">Phone:</label>
+            <input type="phone" id="phone" name="phone" required>
+
             <label for="message">Message:</label>
             <textarea id="message" name="message" required></textarea>
 
-            <button type="submit">Request a Quote</button>
+            <button type="submit" onclick="sendMail()">Request a Quote</button>
         </form>
     </section>
 
