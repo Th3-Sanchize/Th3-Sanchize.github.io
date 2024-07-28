@@ -1,16 +1,24 @@
 html {
     font-size: 16px; /* This sets the base font size to 16px, so 1rem = 16px */
+    scroll-behavior: smooth; /* Smooth scroll behavior */
 }
 
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #121212; /* Dark background color */
+    color: #ffffff; /* Light text color */
 }
 
+img {
+    display: flexbox;
+    border-radius: 15%;
+    margin: 1 0;
+    max-width: 100%
+}
 header {
-    background-color: #333;
+    background: linear-gradient(90deg, #ff5f6d, #ffc371); /* Gradient background matching the logo colors */
     color: white;
     padding: 1rem;
     display: flex;
@@ -30,13 +38,7 @@ header {
     width: 12rem;  /* Larger size for the logo */
     height: auto;
 }
-img {
-    display: flex;
-    width: 100%;
-    height: auto;
-    margin: 1 0;
-    border-radius: 15%;
-}
+
 nav ul {
     list-style: none;
     padding: 0;
@@ -51,11 +53,20 @@ nav ul li {
 nav ul li a {
     color: white;
     text-decoration: none;
+    transition: color 0.3s ease; /* Transition for hover effect */
+}
+
+nav ul li a:hover {
+    color: #ffcc00; /* Change color on hover */
 }
 
 section {
     padding: 2rem;
     text-align: center;
+    background-color: #1e1e1e; /* Dark section background */
+    border-radius: 0.5rem;
+    margin: 1rem auto;
+    max-width: 90%;
 }
 
 form {
@@ -63,32 +74,47 @@ form {
     flex-direction: column;
     max-width: 25rem;  /* 400px converted to rem */
     margin: 0 auto;
+    background-color: #2c2c2c; /* Dark form background */
+    padding: 1rem;
+    border-radius: 0.5rem; /* 8px converted to rem */
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1); /* Shadow for depth */
 }
 
 label {
     margin-top: 1rem;
 }
 
-input, textarea, button {
+input, textarea {
     padding: 0.5rem;
     margin-top: 0.5rem;
+    border: 0.0625rem solid #ccc; /* 1px converted to rem */
+    border-radius: 0.5rem; /* 8px converted to rem */
+    transition: border-color 0.3s ease; /* Transition for focus effect */
+    background-color: #3a3a3a; /* Dark input background */
+    color: #ffffff; /* Light input text color */
+}
+
+input:focus, textarea:focus {
+    border-color: #ffcc00; /* Change border color on focus */
 }
 
 button {
-    background-color: #333;
+    background: linear-gradient(90deg, #ff5f6d, #ffc371); /* Gradient button background matching the logo colors */
     color: white;
     border: none;
     cursor: pointer;
+    padding: 0.75rem;
     margin-top: 1rem;
-    transition: background-color 0.3s ease;
+    border-radius: 0.5rem; /* 8px converted to rem */
+    transition: background-color 0.3s ease; /* Transition for hover effect */
 }
 
 button:hover {
-    background-color: #555;
+    background-color: #ffcc00;
 }
 
 footer {
-    background-color: #333;
+    background: linear-gradient(90deg, #ff5f6d, #ffc371); /* Gradient background */
     color: white;
     text-align: center;
     padding: 1rem 0;
@@ -101,10 +127,11 @@ footer {
     border: 0.0625rem solid #ccc;  /* 1px converted to rem */
     padding: 1rem;
     margin: 1rem 0;
-    border-radius: 0.3125rem;  /* 5px converted to rem */
-    background-color: #fff;
+    border-radius: 0.5rem;  /* 8px converted to rem */
+    background-color: #2c2c2c; /* Dark background */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
+    animation: fadeIn 1s ease-in-out; /* Keyframe animation */
 }
 
 .service-tier:hover {
@@ -113,16 +140,16 @@ footer {
 }
 
 .service-tier:nth-child(odd) {
-    background-color: #f9f9f9;
+    background-color: #333333;
 }
 
 .service-tier h3 {
-    color: #333;
+    color: #ffcc00; /* Highlighted header color */
     margin-bottom: 0.5rem;
 }
 
 .service-tier p {
-    color: #666;
+    color: #ffffff; /* Light text color */
     font-style: italic;
 }
 
@@ -130,22 +157,23 @@ footer {
     border: 0.0625rem solid #ccc;  /* 1px converted to rem */
     padding: 1rem;
     margin: 1rem 0;
-    border-radius: 0.3125rem;  /* 5px converted to rem */
-    background-color: #fff;
+    border-radius: 0.5rem;  /* 8px converted to rem */
+    background-color: #2c2c2c; /* Dark background */
     transition: background-color 0.3s ease;
+    animation: fadeIn 1s ease-in-out; /* Keyframe animation */
 }
 
 .benefit-item:hover, .use-case-item:hover, .faq-item:hover, .testimonial-item:hover, .blog-post:hover {
-    background-color: #f1f1f1;
+    background-color: #333333;
 }
 
 .benefit-item h3, .use-case-item h3, .faq-item h3, .testimonial-item h3, .blog-post h3 {
-    color: #333;
+    color: #ffcc00; /* Highlighted header color */
     margin-bottom: 0.5rem;
 }
 
 .benefit-item p, .use-case-item p, .faq-item p, .testimonial-item p, .blog-post p {
-    color: #666;
+    color: #ffffff; /* Light text color */
     font-style: italic;
 }
 
@@ -161,7 +189,7 @@ footer {
 }
 
 .social-media a:hover {
-    color: #ccc;
+    color: #ffcc00; /* Change color on hover */
 }
 
 address {
@@ -180,7 +208,18 @@ address {
         padding: 0.5rem;
     }
     header, footer {
-        text-align: center;
+        text-align: left;
         padding: 0.5rem;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(1rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
