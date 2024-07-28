@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Determine the vehicle type
         for (const type in vehicleTypes) {
-            if (vehicleTypes[type].includes(selectedModel)) {
+            if (vehicleTypes[type].includes(`${selectedMake} ${selectedModel}`)) {
                 vehicleType = type;
                 break;
             }
@@ -94,11 +94,11 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         const addOnPrices = {
-            sunroof: 50,
+            sunroof: 49.99,
             windshield: 199.99,
             eyebrow: 59.99,
-            tintRemoval: 50,
-            tintRemovalRear: 100
+            tintRemoval: 24.99,
+            tintRemovalRear: 49.99,
         };
 
         let totalPrice = packagePrices[packageType][tintPackage];
@@ -133,7 +133,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (!validateEmail(email)) {
             alert('Please enter a valid email address.');
-            return;
         }
 
         // Display the estimated price and capture their contact information
