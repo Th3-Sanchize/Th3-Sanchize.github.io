@@ -218,11 +218,11 @@ address {
         padding: 0.5rem;
     }
     header, footer {
-        text-align: center;
+        align-items: center;
         padding: 0.5rem;
     }
     nav ul {
-        flex-direction: column;
+        flex-direction: row;
         align-items: flex-start;
     }
 }
