@@ -1,14 +1,3 @@
-function sendMail(){
-    let parms = {
-        name : document.getElementById("name").value,
-        email : document.getElementById("email").value,
-        phone : document.getElementById("phone").value,
-        message : document.getElementById("message").value,
-    }
-
-    emailjs.send("service_hdokaxn","template_4w3c0yd",parms).then(alert("Email Sent!!!"))
-}
-
 let slideIndex = 1;
 showSlides(slideIndex);
 
@@ -37,3 +26,16 @@ function showSlides(n) {
   slides[slideIndex-1].style.display = "block";
   dots[slideIndex-1].className += " active";
 }
+
+
+function sendMail(){
+    let parms = {
+        name : document.getElementById("name").value,
+        email : document.getElementById("email").value,
+        phone : document.getElementById("phone").value,
+        message : document.getElementById("message").value,
+    }
+
+    emailjs.send("service_hdokaxn","template_4w3c0yd",parms).then(alert("Email Sent!!!"))
+}
+
