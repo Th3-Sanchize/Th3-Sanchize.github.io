@@ -34,6 +34,8 @@ header {
     flex: 3;
     text-align: center;
     font-size: 2rem;
+    justify-content: space-between;
+    flex-direction: row;
 }
 
 .logo {
@@ -167,7 +169,6 @@ footer {
 
 .service-tier p {
     color: #ffffff; /* Light text color */
-    font-style: italic;
 }
 
 .benefit-item, .use-case-item, .faq-item, .testimonial-item, .blog-post {
@@ -191,7 +192,6 @@ footer {
 
 .benefit-item p, .use-case-item p, .faq-item p, .testimonial-item p, .blog-post p {
     color: #ffffff; /* Light text color */
-    font-style: italic;
 }
 
 .social-media {
