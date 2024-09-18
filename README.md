@@ -1,1 +1,0 @@
-# Th3-Sanchize.github.io
