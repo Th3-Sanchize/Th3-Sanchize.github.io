@@ -7,13 +7,14 @@
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <title>Premium Automotive Window Tinting in Killeen, TX | Chroma Culture Tint</title>
     <meta name="description"
-        content="GUpgrade your ride with premium window tinting in Killeen. Chroma Culture Tint offers expert installation and top-quality films for enhanced comfort, style, and UV protection. Book your appointment today!" />
+        content="Upgrade your ride with premium window tinting in Killeen. Chroma Culture Tint offers expert installation and top-quality films for enhanced comfort, style, and UV protection. Book your appointment today!" />
     <meta name="keywords"
         content="automotive window tinting Killeen, automotive window film Killeen, car tint Killeen, Chroma Culture Tint, vehicle tint services, Killeen TX tint shop" />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon" />
-    <script src="script.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -227,7 +228,7 @@
                         <label for="message">Additional Notes (Optional):</label>
                         <textarea id="message" name="message"></textarea>
                     </div>
-                    <button type="submit" class="button">Request Quote</button>
+                    <button type="submit" class="button" onclick="sendMail();">Request Quote</button>
                 </form>
             </div>
         </div>
@@ -278,36 +279,41 @@
         });
     </script>
     <script>
-        const form = document.querySelector('#contact-us form');
+        function sendMail() {
+            (function () {
+                emailjs.init("UQ59cvsnmqrEfdsFZ");
+            })();
 
-        form.addEventListener('submit', (event) => {
-            event.preventDefault(); // Prevent default form submission
+            const form = document.querySelector('#contact-us form');
 
-            // Get form data
-            const formData = new FormData(form);
-            const templateParams = {
-                from_name: formData.get('name'),
-                reply_to: formData.get('email'),
-                phone: formData.get('phone'),
-                vehicle: formData.get('vehicle'),
-                service: formData.get('service'),
-                message: formData.get('message')
-            };
+            form.addEventListener('submit', (event) => {
+                event.preventDefault(); // Prevent default form submission
 
-            // Send email using EmailJS
-            emailjs.send("service_hdokaxn", "template_4w3c0yd", templateParams, "UQ59cvsnmqrEfdsFZ")
-                .then((response) => {
-                    console.log('SUCCESS!', response.status, response.text);
-                    alert('Your quote request has been sent successfully!');
-                    form.reset(); // Clear the form after successful submission
-                }, (error) => {
-                    console.log('FAILED...', error);
-                    alert('Oops! Something went wrong. Please try again later.');
-                });
-        });
-    </script>
+                // Get form data
+                const formData = new FormData(form);
 
-    <script>
+                const templateParams = {
+                    from_name: formData.get('name'),
+                    reply_to: formData.get('email'),
+                    phone: formData.get('phone'),
+                    vehicle: formData.get('vehicle'),
+                    service: formData.get('service'),
+                    message: formData.get('message')
+                };
+
+                // Send email using EmailJS
+                emailjs.send("service_hdokaxn", "template_4w3c0yd", templateParams, "UQ59cvsnmqrEfdsFZ")
+                    .then((response) => {
+                        console.log('SUCCESS!', response.status, response.text);
+                        alert('Your quote request has been sent successfully!');
+                        form.reset(); // Clear the form after successful submission
+                    }, (error) => {
+                        console.log('FAILED...', error);
+                        alert('Oops! Something went wrong. Please try again later.');
+                    });
+            });
+        }
+
         const aboutUsParagraphs = document.querySelectorAll('.about-us-content p');
 
         function checkVisibility() {
@@ -322,6 +328,8 @@
         window.addEventListener('scroll', checkVisibility);
         checkVisibility();
     </script>
+
+</html>
 </body>
 
 </html>
